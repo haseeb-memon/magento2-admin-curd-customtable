@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Company::top_level" title="Company" module="Company_CustomTable" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Company_CustomTable::company_customtable_table" title="Table" module="Company_CustomTable" sortOrder="9999" resource="Magento_Backend::content" parent="Company::top_level" action="company_customtable/table/index"/>
+	</menu>
+</config>

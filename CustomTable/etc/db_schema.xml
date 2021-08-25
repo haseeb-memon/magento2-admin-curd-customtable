@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="company_customtable_table" resource="default" engine="innodb" comment="company_customtable_table Table">
+		<column xsi:type="smallint" name="table_id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="table_id"/>
+		</constraint>
+		<column name="title" nullable="false" xsi:type="varchar" comment="title" length="255"/>
+		<index referenceId="COMPANY_CUSTOMTABLE_TABLE_TITLE" indexType="btree">
+			<column name="title"/>
+		</index>
+		<column name="content" nullable="false" xsi:type="text" comment="content"/>
+		<column name="created_at" nullable="false" xsi:type="timestamp" comment="created_at" default="CURRENT_TIMESTAMP"/>
+		<column name="updated_at" nullable="true" xsi:type="timestamp" comment="updated_at" default="CURRENT_TIMESTAMP" on_update="true"/>
+	</table>
+</schema>

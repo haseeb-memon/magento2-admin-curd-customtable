@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Company\CustomTable\Api\TableRepositoryInterface" type="Company\CustomTable\Model\TableRepository"/>
+	<preference for="Company\CustomTable\Api\Data\TableInterface" type="Company\CustomTable\Model\Data\Table"/>
+	<preference for="Company\CustomTable\Api\Data\TableSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Company\CustomTable\Model\ResourceModel\Table\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">company_customtable_table</argument>
+			<argument name="resourceModel" xsi:type="string">Company\CustomTable\Model\ResourceModel\Table\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="company_customtable_table_listing_data_source" xsi:type="string">Company\CustomTable\Model\ResourceModel\Table\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

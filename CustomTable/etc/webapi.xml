@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/company-customtable/table" method="POST">
+		<service class="Company\CustomTable\Api\TableRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Company_CustomTable::Table_save"/>
+		</resources>
+	</route>
+	<route url="/V1/company-customtable/table/search" method="GET">
+		<service class="Company\CustomTable\Api\TableRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Company_CustomTable::Table_view"/>
+		</resources>
+	</route>
+	<route url="/V1/company-customtable/table/:tableId" method="GET">
+		<service class="Company\CustomTable\Api\TableRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Company_CustomTable::Table_view"/>
+		</resources>
+	</route>
+	<route url="/V1/company-customtable/table/:tableId" method="PUT">
+		<service class="Company\CustomTable\Api\TableRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Company_CustomTable::Table_update"/>
+		</resources>
+	</route>
+	<route url="/V1/company-customtable/table/:tableId" method="DELETE">
+		<service class="Company\CustomTable\Api\TableRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Company_CustomTable::Table_delete"/>
+		</resources>
+	</route>
+</routes>
